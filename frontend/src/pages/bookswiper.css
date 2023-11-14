@@ -1,0 +1,48 @@
+
+
+.book .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .book .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .book .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  
+  
+  .mahdi .swiper {
+    width: 600px;
+    height:220px;
+  }
+  
+  .mahdi .swiper-slide {
+    text-align: center;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .mahdi .swiper-slide img {
+    display: block;
+    object-fit: cover;
+  }
+  
+  
