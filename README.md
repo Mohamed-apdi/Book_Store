@@ -15,11 +15,15 @@ http://localhost:5173/
 
 ![image](https://github.com/Mohamed-apdi/Book_Store/assets/119160455/a5ce1666-2343-433d-b427-8dfbc762771a)
 
-// MIDLE
+# MIDLE
 <img width="943" alt="image" src="https://github.com/Mohamed-apdi/Book_Store/assets/119160455/322ccada-1b34-4082-aa94-5b6b48fc3863">
 
-// ADMIN 
+# ADMIN 
 
-![Uploading image.png…]()
+<img width="946" alt="image" src="https://github.com/Mohamed-apdi/Book_Store/assets/119160455/86d5a192-5167-4159-a513-c4ad45e0492d">
+
+
+
+
 
 
