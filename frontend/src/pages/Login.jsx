@@ -42,9 +42,9 @@ function Login() {
     };
 
     return (
-      <div className="bg-gradient-to-r from-gray-700 via-gray-900 to-black h-[100vh]">
+      <div className="sign-bg h-[100vh]">
         <Header />
-        <div className="flex items-center justify-center mt-12 h-full ">
+        <div className="flex items-center justify-center mt-0 h-full ">
           <div>
             <form
               onSubmit={handleSubmit}
@@ -87,12 +87,13 @@ function Login() {
                   {error}
                 </div>
               )}
+              
                 <button
                   className="w-full text-white bg-blue-500 hover:bg-blue-600 py-3 rounded-lg cursor-pointer mt-3"
                 >
                   Sign In
                 </button>
-              
+             
               <Link to={"/register"}>
                 <p className="text-[18px] text-[#666] pt-2">
                   Dont have an account?

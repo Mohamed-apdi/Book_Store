@@ -4,35 +4,31 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      const response = await axios.post("http://localhost:2000/contact/us", {
-        name,
-        email,
-        message,
-      });
-
-      if (response.status === 200) {
-        alert("Email sent successfully!");
-      } else {
-        alert("Failed to send email.");
-      }
+      console.log("Form data:", formData);
+      await axios.post("http://localhost:2000/api/contact", formData);
+      alert("Email sent successfully");
     } catch (error) {
-      console.error(error);
-      console.log(error.response.data); // Log the response data
-      alert("An error occurred. Please try again later.");
+      console.error("Error:", error);
+      alert("Error sending email. Please try again later.");
     }
   };
-
+  
   return (
     <div>
-      <Header/>
+      <Header />
       <div className="bg-slate-300 p-8 rounded-lg shadow-md mt-10">
         <h2 className="text-3xl font-semibold mb-6 text-gray-800">
           Contact Us
@@ -55,9 +51,9 @@ function Contact() {
               type="text"
               id="name"
               name="name"
+              value={formData.name}
+              onChange={handleChange}
               className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="mb-4">
@@ -71,9 +67,9 @@ function Contact() {
               type="email"
               id="email"
               name="email"
+              value={formData.email}
+              onChange={handleChange}
               className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-4">
@@ -87,9 +83,9 @@ function Contact() {
               id="message"
               name="message"
               rows="4"
+              value={formData.message}
+              onChange={handleChange}
               className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
             ></textarea>
           </div>
           <div className="flex items-center justify-end">
@@ -102,7 +98,7 @@ function Contact() {
           </div>
         </form>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

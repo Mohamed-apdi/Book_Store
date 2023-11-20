@@ -21,9 +21,10 @@ import Managebooks from "./components/Managebooks";
 import ShoppingCart from "./pages/ShoppingCart";
 import AboutUs from "./components/AboutUs";
 import Dashboard from "./components/Dashboard"
-
+import LoginAdmin from "./pages/LoginAdmin";
+import SignUpAdmin from "./pages/signUpAdmin";
+import Timer from "./pages/Timer"
 // import { AdminDashboard } from "./Admin/AdminDashboard";
-
 
 axios.defaults.baseURL = "http://localhost:2000/";
 axios.defaults.withCredentials = true;
@@ -38,7 +39,9 @@ function App() {
       <Route path="/books" element={<Allbooks />} />
       <Route path="/readmore/:bookId" element={<ReadMore />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/adminL" element={<LoginAdmin />} />
       <Route path="/register" element={<SignUp />} />
+      <Route path="/adminR" element={<SignUpAdmin />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
       <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />} />
@@ -52,6 +55,7 @@ function App() {
       <Route path="/manage" element={<Managebooks />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/dashbord" element={<Dashboard />} />
+      <Route path="/timer" element={<Timer/>} />
     </Routes>
   );
 }

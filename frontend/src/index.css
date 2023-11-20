@@ -2,14 +2,141 @@
 @tailwind components;
 @tailwind utilities;
 body{
-background:#fff;
+  background: rgb(199, 210, 254);
+
 }
 .box{
     position: relative;
     box-shadow: -2px 4px 13px rgb(0,0,0,0.5);
 }
+.hero{
+    background-image: url("./images/gg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.sign-bg{
+  background-image: url("./images/image-from-rawpixel-id-2408262-jpeg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.books-bg{
+  background-image: url("./images/image-from-rawpixel-id-3910459-original.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.nav-bg{
+    -webkit-backdrop-filter: blur(28px);
+  backdrop-filter: blur(18px);
+}
+/* Tooltip.css */
 
+.tooltip1 {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .tooltip1::before {
+    @apply content-['Home'] absolute text-sm opacity-0 transition-opacity duration-300 ease-in-out bg-black text-white p-1 mt-7 rounded z-10 invisible;
+  }
+  
+  .tooltip1:hover::before {
+    @apply opacity-100 visible;
+  }
 
+  .tooltip2 {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .tooltip2::before {
+    @apply content-['Books'] absolute text-sm opacity-0 transition-opacity duration-300 ease-in-out bg-black text-white p-1 mt-7 rounded z-10 invisible;
+  }
+  
+  .tooltip2:hover::before {
+    @apply opacity-100 visible;
+  }
+
+  .tooltip3 {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .tooltip3::before {
+    @apply content-['Dashboard'] absolute text-[17px] opacity-0 transition-opacity duration-300 ease-in-out bg-black text-white p-1 mt-7 rounded z-10 invisible;
+  }
+  
+  .tooltip3:hover::before {
+    @apply opacity-100 visible;
+  }
+
+  .tooltip4 {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .tooltip4::before {
+    @apply content-['Store'] absolute text-[17px] opacity-0 transition-opacity duration-300 ease-in-out bg-black text-white py-[-6px] px-1 mt-7 rounded z-10 invisible;
+  }
+  
+  .tooltip4:hover::before {
+    @apply opacity-100 visible;
+  }
+  .tooltip5 {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .tooltip5::before {
+    @apply content-['login'] absolute text-[16px] opacity-0 transition-opacity duration-300 ease-in-out bg-black text-white py-[-2px] px-1 mt-8 rounded z-10 invisible;
+  }
+  
+  .tooltip5:hover::before {
+    @apply opacity-100 visible;
+  }
+  .tooltip6 {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .tooltip6::before {
+    @apply content-['logout'] absolute text-[15px] opacity-0 transition-opacity duration-300 ease-in-out bg-black text-white py-[-2px] px-1 mt-8 rounded z-10 invisible;
+  }
+  
+  .tooltip6:hover::before {
+    @apply opacity-100 visible;
+  }
+
+  .tooltip7 {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .tooltip7::before {
+    @apply content-['cart'] absolute text-[17px] opacity-0 transition-opacity duration-300 ease-in-out bg-black text-white py-[-2px] mt-8 rounded z-10 invisible;
+  }
+  
+  .tooltip7:hover::before {
+    @apply opacity-100 visible;
+  }
+
+  .tooltip8 {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .tooltip8::before {
+    @apply content-['search'] absolute text-[17px] opacity-0 transition-opacity duration-300 ease-in-out bg-black text-white p-1 mt-7 rounded z-10 invisible;
+  }
+  
+  .tooltip8:hover::before {
+    @apply opacity-100 visible;
+  }
 .box  .icons {
     border-bottom: .1rem solid #000;
     position: absolute;
@@ -76,3 +203,10 @@ tbody{
 .activeBtn:active{
     background-color: rgb(37 99 235  );
 }
+/* 
+.menu li{
+    display: table-cell;
+    position: relative;
+    padding: 15px 0;
+}
+.menu li  */

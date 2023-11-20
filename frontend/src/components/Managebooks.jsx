@@ -50,10 +50,10 @@ const Managebooks = () => {
   };
 
   return (
-    <div>
+    <div className=" h-[100vh]">
       <Header />
       <Admindashboard />
-      <div className="ml-[15%] mr-14 shadow-xl mt-[75px] ">
+      <div className="ml-[15%] mr-14  mt-[85px] ">
         <h1 className="d text-3xl text-center font-bold pb-4">Manage Books</h1>
 
         <table className="w-full text-center">
@@ -98,14 +98,14 @@ const Managebooks = () => {
         </table>
         <div className="flex justify-center items-center pb-2">
           <button
-            className="bg-blue-500 text-white px-4 mt-2  rounded-sm mr-2"
+            className=" bg-cyan-950  text-white px-6 mt-2  rounded-md mr-2 cursor-pointer hover:shadow-md"
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
           >
             Prev
           </button>
           <button
-            className="bg-blue-500 text-white mt-2 rounded-sm px-4"
+            className=" bg-cyan-950  text-white mt-2 rounded-md px-6 cursor-pointer hover:shadow-md"
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === maxPage}
           >

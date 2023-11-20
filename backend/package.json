@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@stripe/react-stripe-js": "^2.3.2",
+    "@stripe/stripe-js": "^2.1.11",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -20,7 +22,8 @@
     "mongoose": "^8.0.0",
     "node-gyp": "^10.0.1",
     "nodemailer": "^6.9.7",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "stripe": "^14.5.0"
   },
   "description": ""
 }

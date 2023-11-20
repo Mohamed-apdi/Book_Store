@@ -33,12 +33,12 @@ function Home() {
    };
 
   return (
-    <div className="flex justify-around items-center bg-gradient-to-r from-sky-400 to-blue-500 h-[97vh]">
+    <div className="flex justify-around items-center hero h-[97vh]">
       <div className="mahdi">
         <h1 className="text-black text-5xl font-bold mb-2">
         Best Sellers of the Week
         </h1>
-        <h2 className="text-white text-4xl font-bold mb-5">
+        <h2 className="text-white text-3xl font-bold mb-5">
           For the best prices
         </h2>
         <p className="text-black text-sm w-[600px] mb-3">
@@ -60,7 +60,7 @@ function Home() {
         >
           Search
         </button> 
-        <div className="absolute top-[400px]">
+        <div className="absolute top-[460px]">
           <Swiper
             slidesPerView={4}
             spaceBetween={-100}
@@ -92,7 +92,7 @@ function Home() {
                 >
                   <Link to={`/readmore/${book._id}`}>
                     <div
-                      className="object-cover px-4 py-2  w-[200px] shadow-md bg-white mt-5 rounded-md"
+                      className="object-cover px-4 py-2  w-[200px] shadow-md bg-white mt-5 rounded-md hover:shadow-sm"
                       key={book._id}
                     >
                       <img

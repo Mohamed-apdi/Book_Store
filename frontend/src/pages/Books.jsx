@@ -29,21 +29,21 @@ function Books() {
     fetch();
   });
 
-  const delateBook = (id) => {
-    axios
-      .delete(`http://localhost:2000/delete/${id}`)
-      .then(() => {
-        toast("delete  successfully", {
-          position: "top-right",
-          autoClose: 1000,
-          hideProgressBar: false,
-        });
-        Books();
-      })
-      .catch((eror) => {
-        console.log(eror);
-      });
-  };
+  // const delateBook = (id) => {
+  //   axios
+  //     .delete(`http://localhost:2000/delete/${id}`)
+  //     .then(() => {
+  //       toast("delete  successfully", {
+  //         position: "top-right",
+  //         autoClose: 1000,
+  //         hideProgressBar: false,
+  //       });
+  //       Books();
+  //     })
+  //     .catch((eror) => {
+  //       console.log(eror);
+  //     });
+  // };
 
   // add cart
   const addToCart = (item) => {
@@ -78,13 +78,13 @@ function Books() {
         <p className="text-2xl cursor-pointer hover:text-teal-500">All Products <FaAngleRight className=" inline" /></p>
         </Link>
       </div>
-    <div className="pb-20 px-32 ">
+    <div className="pb-20 px-32 cursor-pointer">
       {/* <Header /> */}
       
 
       <Swiper
         slidesPerView={4}
-        spaceBetween={10}
+        spaceBetween={-45}
         pagination={{
           clickable: true,
         }}

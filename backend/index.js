@@ -4,9 +4,13 @@ const bookModel = require("./model/bookModel");
 const cors = require("cors")
 const app = express();
 const userRoutes = require("./routes/users");
+const userAdminRoutes = require("./routes/userAdmin");
 const authRoutes = require("./routes/auth")
+const authAdminRoutes = require("./routes/authAdmin")
 const nodemailer = require("nodemailer");
 const router = require("express").Router();
+const bodyParser = require("body-parser");
+//  up requires
 const corsOptions = {
   origin: "http://localhost:5173", // Replace with your React app's URL
   credentials: true, // Allow credentials (cookies, authorization headers)
@@ -14,47 +18,40 @@ const corsOptions = {
 
 app.use(express.json())
 app.use(cors(corsOptions));
+app.use(bodyParser.json());
 
+// Gmail SMTP configuration
 const transporter = nodemailer.createTransport({
-  service: "Gmail",
+  service: "gmail",
   auth: {
-    user: "moh769888@gmail.com",
-    pass: "Maxamed0",
+    user: "maxamedcabdifitaax33@gmail.com", // Your Gmail email address
+    pass: "nukd qtxj znnh wwqw", // Your Gmail password or an app-specific password
   },
-  secure: true, // Use TLS
-  port: 587, // Port for TLS
 });
 
-
-app.post("/contact/us", async (req, res) => {
+app.post("/api/contact", async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    // Create the email message
+    console.log("Received contact form submission:", { name, email, message });
+
     const mailOptions = {
-      from: email,
-      to: "moh769888@gmail.com", // Replace with your email
-      subject: `Contact Us - Message from ${name}`,
-      text: message,
+      from: "your@gmail.com",
+      to: "recipient@example.com", // Recipient email address
+      subject: "Contact Form Submission",
+      html: `<p><strong>Name:</strong> ${name}</p>
+             <p><strong>Email:</strong> ${email}</p>
+             <p><strong>Message:</strong> ${message}</p>`,
     };
 
+    await transporter.sendMail(mailOptions);
 
-    // Send the email
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error(error);
-        res.status(500).json({ error: "Failed to send email" });
-      } else {
-        console.log("Email sent: " + info.response);
-        res.status(200).json({ message: "Email sent successfully" });
-      }
-    });
+    res.status(200).json({ success: true, message: "Email sent successfully" });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Server error" });
+    console.error("Error processing contact form:", error);
+    res.status(500).json({ success: false, message: "Internal server error" });
   }
 });
-
 
 // db connections
 mongoose
@@ -70,7 +67,9 @@ mongoose
 
 // Routes
 app.use("/api/users", userRoutes);
+app.use("/api/useradmin", userAdminRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/authAdmin", authAdminRoutes);
 
 
 // create post
@@ -168,7 +167,6 @@ app.get("/count/books", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
-
 
 
 app.listen(2000, () => {

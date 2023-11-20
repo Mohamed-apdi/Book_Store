@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify"
 import { Link } from "react-router-dom";
 import {AiFillEye} from "react-icons/ai"
-import {BiArrowBack} from "react-icons/bi"
+// import {BiArrowBack} from "react-icons/bi"
 function Allbooks() {
   // shop cart
   const addToCart = (item) => {
@@ -42,18 +42,18 @@ function Allbooks() {
 
 
     return (
-      <div className="h-screen">
+        <div className=" h-screen mt-20 ">
         <Header />
         <h1 className="text-4xl font-bold mt-16 text-teal-500 text-center">
           ENJO<span className="text-blue-500">Y</span> BOOK
           <span className="text-blue-500">S</span>
         </h1>
 
-        <div className="grid grid-cols-4 h-screen w-[700px] ml-40  gap-x-48 gap-y-10  mt-10 static mb-5">
+        <div className=" grid grid-cols-4 h-screen w-[700px] ml-48  gap-x-72 gap-y-10  mt-10 static mb-5">
           {Data &&
             Data.map((item) => (
               <>
-                <div className="flex bg-white w-[180px] h-[310px] object-cover items-center  rounded-md flex-col relative box">
+                <div className="flex bg-white w-[200px] h-[310px] object-cover items-center  rounded-md flex-col relative box">
                   <div className="flex bg-amber-500 p-2 rounded-md mt-6 w-full justify-around icons ">
                    
                     <Link to={`/readmore/${item._id}`}>

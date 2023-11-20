@@ -56,8 +56,14 @@ function ReadMore() {
             <h2 className="text-2xl text-white font-semibold ml-20">
               Description:
             </h2>
-            <p className="text-[18px] ml-20 mt-5 w-[700px] text-start text-white">
+            <p className="text-[18px] ml-20 mt-5 w-[700px] text-start text-white pb-3">
               {book.description}
+            </p>
+            <p className="text-[18px] ml-20 mt-5 w-[700px] text-start text-white pb-3">
+              {book.descriptionOne}
+            </p>
+            <p className="text-[18px] ml-20 mt-5 w-[700px] text-start text-white">
+              {book.descriptionTwo}
             </p>
           </div>
         ) : (

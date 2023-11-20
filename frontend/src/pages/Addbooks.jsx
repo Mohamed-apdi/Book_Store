@@ -12,6 +12,8 @@ function Addbooks() {
   const [author, setAuthor] = useState("")
   const [price, setPrice] = useState("")
   const [description, setDescription] = useState("")
+  const [descriptionOne, setDescriptionOne] = useState("")
+  const [descriptionTwo, setDescriptionTwo] = useState("")
   const [image , setImage] = useState([])
 
   const navigate = useNavigate();
@@ -23,6 +25,8 @@ const createBook = (event) => {
       author: author,
       price: price,
       description: description,
+      descriptionOne: descriptionOne,
+      descriptionTwo: descriptionTwo,
       image: image,
     })
     .then(() => {
@@ -49,6 +53,7 @@ const createBook = (event) => {
             value={bookname}
             required
             name="bookname"
+            autoComplete="off"
             onChange={(e) => {
               setBookname(e.target.value);
             }}
@@ -59,6 +64,7 @@ const createBook = (event) => {
           <input
             value={author}
             required
+            autoComplete="off"
             name="author"
             onChange={(e) => {
               setAuthor(e.target.value);
@@ -70,6 +76,7 @@ const createBook = (event) => {
           <input
             value={price}
             required
+            autoComplete="off"
             name="price"
             onChange={(e) => {
               setPrice(e.target.value);
@@ -88,6 +95,7 @@ const createBook = (event) => {
             placeholder="URL image"
             className="p-1 rounded-sm bg-gray-50 border border-gray-300 text-gray-900"
           />
+          
           <textarea
             value={description}
             required
@@ -95,8 +103,30 @@ const createBook = (event) => {
             onChange={(e) => {
               setDescription(e.target.value);
             }}
-            rows={5}
+            rows={2}
             placeholder="description"
+            className="p-1 rounded-sm bg-gray-50 border border-gray-300 text-gray-900"
+          />
+           <textarea
+            value={descriptionOne}
+            required
+            name="description"
+            onChange={(e) => {
+              setDescriptionOne(e.target.value);
+            }}
+            rows={2}
+            placeholder="min description"
+            className="p-1 rounded-sm bg-gray-50 border border-gray-300 text-gray-900"
+          />
+           <textarea
+            value={descriptionTwo}
+            required
+            name="description"
+            onChange={(e) => {
+              setDescriptionTwo(e.target.value);
+            }}
+            rows={2}
+            placeholder="max description"
             className="p-1 rounded-sm bg-gray-50 border border-gray-300 text-gray-900"
           />
           <button

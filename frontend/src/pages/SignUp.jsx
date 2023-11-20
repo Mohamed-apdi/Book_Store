@@ -41,9 +41,9 @@ function SignUp() {
   }
 
   return (
-    <div className="bg-gradient-to-r from-gray-700 via-gray-900 to-black h-[100vh]">
+    <div className="sign-bg h-[100vh]">
       <Header />
-      <div className="flex items-center justify-center mt-12 h-full">
+      <div className="flex items-center justify-center h-full">
         <div>
           <form onSubmit={handleSubmit} className="bg-white border border-solid border-opacity-10 border-black w-[550px] p-[30px] shadow-md rounded-md m-[32px]">
             <h3 className="text-xl uppercase text-center text-[#444]">
@@ -94,7 +94,7 @@ function SignUp() {
             </button>
            
             <Link to={"/login"}>
-              <p className="text-[18px] text-[#666] pt-2">
+              <p className="text-[18px] text-[#666] pt-2 transition-all">
                 Already have an account?
                 <span className="text-blue-500 underline cursor-pointer hover:text-blue-700">
                   Sign in here.
