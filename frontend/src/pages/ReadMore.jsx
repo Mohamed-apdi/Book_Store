@@ -3,7 +3,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Footer from "./Footer";
-
+import { ToastContainer, toast } from "react-toastify";
+import { FaRegArrowAltCircleLeft } from "react-icons/fa";
+import { Link } from "react-router-dom";
 function ReadMore() {
   const { bookId } = useParams();
   const [book, setBook] = useState(null);
@@ -20,12 +22,39 @@ function ReadMore() {
       });
   }, [bookId]);
 
+  // add cart
+  const addToCart = (item) => {
+    const existingCartItems =
+      JSON.parse(localStorage.getItem("cartItems")) || [];
+    const itemInCart = existingCartItems.find(
+      (cartItem) => cartItem._id === item._id
+    );
+
+    if (!itemInCart) {
+      existingCartItems.push(item);
+      localStorage.setItem("cartItems", JSON.stringify(existingCartItems));
+      toast("Added to cart successfully", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+      });
+    } else {
+      toast("This item is already in the cart", {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+      });
+    }
+  };
+
   return (
     <div>
       <Header />
+      <Link to={"/books"}>
+        <FaRegArrowAltCircleLeft className=" absolute text-white top-16 text-3xl ml-4 " /></Link>
       <div>
         {book ? (
-          <div className="mt-10 p-5 bg-gradient-to-r from-gray-700 via-gray-900 to-black">
+          <div className=" mt-10 p-5 bg-gradient-to-r from-gray-700 via-gray-900 to-black">
            
 
             <div className="ml-20 flex space-x-36  border-b-2 p-2">
@@ -48,7 +77,7 @@ function ReadMore() {
                   <span className="text-white font-bold">Price:</span> $
                   {book.price}
                 </p>
-                <button className="inline-block w-[90%] ml-2 px-6 py-[7px] text-xs  leading-6 text-center text-white uppercase transition bg-teal-500 rounded shadow ripple hover:shadow-lg hover:bg-teal-600 font-bold focus:outline-none">
+                <button onClick={() => addToCart(book)} className="inline-block w-[90%] ml-2 px-6 py-[7px] text-xs  leading-6 text-center text-white uppercase transition bg-teal-500 rounded shadow ripple hover:shadow-lg hover:bg-teal-600 font-bold focus:outline-none">
                   shop now
                 </button>
               </div>
@@ -71,6 +100,7 @@ function ReadMore() {
         )}
       </div>
       <Footer />
+      <ToastContainer/>
     </div>
   );
 }

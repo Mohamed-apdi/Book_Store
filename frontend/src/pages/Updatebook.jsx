@@ -9,6 +9,8 @@ function Updatebook() {
   const [author, setAuthor] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
+  const [descriptionOne, setDescriptionOne] = useState("")
+  const [descriptionTwo, setDescriptionTwo] = useState("")
   const [image, setImage] = useState([]);
 
   const navigate = useNavigate();
@@ -20,6 +22,8 @@ function Updatebook() {
             setAuthor(response.data.author);
             setPrice(response.data.price);
             setDescription(response.data.description);
+            setDescriptionOne(response.data.descriptionOne);
+            setDescriptionTwo(response.data.descriptionTwo);
             setImage(response.data.image);
       }).catch((console.error()))
   }
@@ -35,6 +39,8 @@ function Updatebook() {
           .put(`http://localhost:2000/update/single/${params.id}`, {
             "bookname": bookname,
             "description": description,
+            "descriptionOne": descriptionOne,
+            "descriptionTwo": descriptionTwo,
             "author": author,
             "image": image,
             "price":price
@@ -46,10 +52,10 @@ function Updatebook() {
           })
     }
   return (
-    <div className="bg-blue-500 h-screen">
+    <div className=" h-screen">
       <Header />
-      <div className="w-[500px] mx-auto mt-24">
-        <div className="space-y-4 flex flex-col">
+      <div className="w-[500px] mx-auto">
+        <div className="space-y-4 flex flex-col mt-24 bg-yellow-700 p-4 rounded">
           <input
             value={bookname}
             name="bookname"
@@ -97,6 +103,28 @@ function Updatebook() {
             }}
             rows={5}
             placeholder="description"
+            className="p-1 rounded-sm"
+          />
+
+          <textarea
+            value={descriptionOne}
+            name="descriptionOne"
+            onChange={(e) => {
+              setDescriptionOne(e.target.value);
+            }}
+            rows={5}
+            placeholder="description min"
+            className="p-1 rounded-sm"
+          />
+
+          <textarea
+            value={descriptionTwo}
+            name="descriptionTwo"
+            onChange={(e) => {
+              setDescriptionTwo(e.target.value);
+            }}
+            rows={5}
+            placeholder="description max"
             className="p-1 rounded-sm"
           />
           <button

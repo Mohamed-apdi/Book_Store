@@ -1,9 +1,9 @@
 import { NavLink , Link } from "react-router-dom"
 import { MdAccountCircle } from "react-icons/md"
 import { HiOutlineLogout } from "react-icons/hi"
-import { GiBookStorm } from "react-icons/gi"
 import { GiShoppingBag } from "react-icons/gi"
 import { useState, useEffect } from "react";
+
 function Header() {
 
 
@@ -38,18 +38,23 @@ function Header() {
       setNavbarBg("bg-transparent");
     }
   };
+
+  function refreshPage(){
+    window.location.reload();
+} 
   
     return (
       <div
         className={`nav-bg p-2 flex items-center justify-around space-x-60 fixed top-0 right-0 left-0 z-50 ${navbarBg} `}
         aria-label="global"
       >
-        <NavLink to={"/"}>
-          <h1 className="text-2xl font-bold text-white cursor-pointer">
-            <GiBookStorm className="inline text-white font-bold" />{" "}
-            <label className="text-white cursor-pointer tooltip4">Store</label>
+        
+          <h1 className="text-2xl font-bold text-white cursor-pointer" onClick={refreshPage}>
+          <NavLink to={"/"}>
+            <label className=" text-amber-500 cursor-pointer tooltip4">Store</label>
+            </NavLink>
           </h1>
-        </NavLink>
+       
         <div className="text-white space-x-10 text-[18px] flex items-center">
         <NavLink to="/" className="tooltip1 text-white " data-text="Home">
         Home

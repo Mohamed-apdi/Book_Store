@@ -24,6 +24,7 @@ import Dashboard from "./components/Dashboard"
 import LoginAdmin from "./pages/LoginAdmin";
 import SignUpAdmin from "./pages/signUpAdmin";
 import Timer from "./pages/Timer"
+import Payment from "./pages/Payment";
 // import { AdminDashboard } from "./Admin/AdminDashboard";
 
 axios.defaults.baseURL = "http://localhost:2000/";
@@ -35,7 +36,7 @@ function App() {
       <Route path="/header" element={<Header />} />
       <Route path="/addbooks" element={<Addbooks />} />
       <Route path="/update/:id" element={<Updatebook />} />
-      <Route path="/cart" element={<ShoppingCart />} />
+      <Route path="/cart" element={<ShoppingCart/>} />
       <Route path="/books" element={<Allbooks />} />
       <Route path="/readmore/:bookId" element={<ReadMore />} />
       <Route path="/login" element={<Login />} />
@@ -56,6 +57,8 @@ function App() {
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/dashbord" element={<Dashboard />} />
       <Route path="/timer" element={<Timer/>} />
+      <Route path="/payment" element={<Payment />} />
+
     </Routes>
   );
 }

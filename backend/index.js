@@ -10,6 +10,7 @@ const authAdminRoutes = require("./routes/authAdmin")
 const nodemailer = require("nodemailer");
 const router = require("express").Router();
 const bodyParser = require("body-parser");
+const stripe = require('stripe')(process.env.STRIPE_PRIVET_KEY)
 //  up requires
 const corsOptions = {
   origin: "http://localhost:5173", // Replace with your React app's URL
@@ -28,6 +29,8 @@ const transporter = nodemailer.createTransport({
     pass: "nukd qtxj znnh wwqw", // Your Gmail password or an app-specific password
   },
 });
+
+
 
 app.post("/api/contact", async (req, res) => {
   try {
@@ -62,8 +65,6 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-
-
 
 // Routes
 app.use("/api/users", userRoutes);
@@ -167,6 +168,51 @@ app.get("/count/books", async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+
+// Route to get all admin users
+router.get("/getUser", async (req, res) => {
+  try {
+    const adminUsers = await User.find({ role: "admin" });
+    res.json(adminUsers);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+
+ // Route for creating a payment session
+// app.post("/api/create-payment-session", async (req, res) => {
+//   try {
+//     const { items, token } = req.body;
+
+//     // Calculate the total amount for the payment
+//     const totalAmount = items.reduce((total, item) => total + item.price, 0);
+
+//     // Create a payment session with Stripe
+//     const session = await stripe.checkout.sessions.create({
+//       payment_method_types: ["card"],
+//       line_items: items.map((item) => ({
+//         price_data: {
+//           currency: "usd",
+//           product_data: {
+//             name: item.bookname,
+//           },
+//           unit_amount: item.price * 100, // Stripe expects the amount in cents
+//         },
+//         quantity: 1,
+//       })),
+//       mode: "payment",
+//       success_url: "http://localhost:5173/success", // Replace with your success URL
+//       cancel_url: "http://localhost:5173/cancel", // Replace with your cancel URL
+//     });
+
+//     res.json({ sessionId: session.id, totalAmount });
+//   } catch (error) {
+//     console.error("Error creating payment session:", error);
+//     res.status(500).json({ success: false, message: "Internal server error" });
+//   }
+// });
 
 
 app.listen(2000, () => {

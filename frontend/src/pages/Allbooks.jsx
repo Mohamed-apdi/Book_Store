@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify"
 import { Link } from "react-router-dom";
 import {AiFillEye} from "react-icons/ai"
+import { FaRegArrowAltCircleLeft } from "react-icons/fa";
 // import {BiArrowBack} from "react-icons/bi"
 function Allbooks() {
   // shop cart
@@ -44,9 +45,10 @@ function Allbooks() {
     return (
         <div className=" h-screen mt-20 ">
         <Header />
-        <h1 className="text-4xl font-bold mt-16 text-teal-500 text-center">
-          ENJO<span className="text-blue-500">Y</span> BOOK
-          <span className="text-blue-500">S</span>
+        <Link to={"/"}>
+        <FaRegArrowAltCircleLeft className=" absolute text-black top-16 text-3xl ml-4" /></Link>
+        <h1 className="text-4xl font-bold text-black text-center animated-text">
+         Words That Wander
         </h1>
 
         <div className=" grid grid-cols-4 h-screen w-[700px] ml-48  gap-x-72 gap-y-10  mt-10 static mb-5">
@@ -66,7 +68,7 @@ function Allbooks() {
                   <p className="text-[16px]">${item.price}</p>
                   <button
                     onClick={() => addToCart(item)}
-                    className="inline-block w-[93%] px-6 py-[7px] text-xs  leading-6 text-center text-white uppercase transition bg-teal-500 rounded shadow ripple hover:shadow-lg hover:bg-teal-600 font-bold focus:outline-none"
+                    className="inline-block w-[93%] px-6 py-[7px] text-xs  leading-6 text-center text-white uppercase transition bg-blue-500 rounded shadow ripple hover:shadow-lg hover:bg-blue-600 font-bold focus:outline-none"
                   >
                     Add to Cart
                   </button>

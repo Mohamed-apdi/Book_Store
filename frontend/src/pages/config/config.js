@@ -1,2 +1,0 @@
-// config.js
-export const stripePublicKey = 'pk_test_51OEAxhFSGYRktiWCz419SDxvNqYyQMPTmR14EyTglGoZBCxwNiWuRLrwdZVljUA5Mm6aFRtzIyUzLpeU5Bt5Uu2c00AWrjcBRq';

@@ -29,7 +29,7 @@ function Contact() {
   return (
     <div>
       <Header />
-      <div className="bg-slate-300 p-8 rounded-lg shadow-md mt-10">
+      <div className="bg-slate-300 p-8 rounded-lg shadow-md mt-10 mb-20 ">
         <h2 className="text-3xl font-semibold mb-6 text-gray-800">
           Contact Us
         </h2>

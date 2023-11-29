@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom"
 function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-blue-400 to-emerald-400 text-white py-6">
+    <footer className="bg-black text-white py-4">
       <div className="container mx-auto flex justify-around items-center">
         <Link to={"/"}>
           <h2 className="text-2xl font-semibold mb-2">BookStore</h2>

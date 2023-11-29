@@ -6,7 +6,7 @@ function AboutUs() {
     <div>
       <Header />
       <Admindashboard />
-      <div className="bg-white p-8 rounded-lg ml-[15%]  mt-12">
+      <div className="bg-white p-8 rounded-lg ml-[15%]  mt-12 h-screen">
         <h2 className="text-3xl font-semibold mb-6 text-gray-800">
           About BookStore
         </h2>

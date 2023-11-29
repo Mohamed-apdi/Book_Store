@@ -25,4 +25,16 @@ router.post("/", async (req, res) => {
     }
 })
 
+
+
+router.get("/admin/user/all", async (req, res) => {
+  try {
+    const getUsers = await Admin.find();
+    res.send(getUsers);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: "Internal Server Error" });
+  }
+});
+
 module.exports = router;

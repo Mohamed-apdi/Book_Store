@@ -35,13 +35,13 @@ function Home() {
   return (
     <div className="flex justify-around items-center hero h-[97vh]">
       <div className="mahdi">
-        <h1 className="text-black text-5xl font-bold mb-2">
+        <h1 className="text-slate-900 text-5xl font-bold mb-2">
         Best Sellers of the Week
         </h1>
-        <h2 className="text-white text-3xl font-bold mb-5">
+        <h2 className=" text-slate-700 text-3xl font-bold mb-2">
           For the best prices
         </h2>
-        <p className="text-black text-sm w-[600px] mb-3">
+        <p className="text-black text-sm w-[600px] mb-1">
           Find and read more books you'll love, and keep track of the books you
           want to read. Be part of the world's largest community of books lovers
           on Goodreads.
@@ -92,17 +92,17 @@ function Home() {
                 >
                   <Link to={`/readmore/${book._id}`}>
                     <div
-                      className="object-cover px-4 py-2  w-[200px] shadow-md bg-white mt-5 rounded-md hover:shadow-sm"
+                      className="object-cover px-4 py-2  w-[200px] -mt-7 shadow-md bg-slate-700 rounded-md hover:shadow-sm"
                       key={book._id}
                     >
                       <img
                         className="w-[70px] h-[70px] rounded-md mx-auto"
                         src={book.image}
                       />
-                      <p className="font-bold text-[12px]">
-                        Title: {book.bookname}
+                      <p className="font-bold text-white text-[12px]">
+                      {book.bookname}
                       </p>
-                      <p className="t text-[12px]">Author: {book.author}</p>
+                      <p className="t text-[12px] text-white">{book.author}</p>
                     </div>
                   </Link>
                 </SwiperSlide>

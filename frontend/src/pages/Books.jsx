@@ -125,7 +125,7 @@ function Books() {
                     <p className="text-gray-400">{item.author}</p>
                     <p className="text-[16px]">${item.price}</p>
                     <Link></Link>
-                    <button onClick={() => addToCart(item)} className="inline-block w-[93%] px-6 py-[7px] text-xs font-medium leading-6 text-center text-white uppercase transition bg-teal-500 rounded shadow ripple hover:shadow-lg hover:bg-teal-600 focus:outline-none">
+                    <button onClick={() => addToCart(item)} className="inline-block w-[93%] px-6 py-[7px] text-xs font-medium leading-6 text-center text-white uppercase transition bg-blue-500 rounded shadow ripple hover:shadow-lg hover:bg-blue-600 focus:outline-none">
                     Add to Cart
                     </button>
                   </div>

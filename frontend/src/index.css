@@ -5,16 +5,37 @@ body{
   background: rgb(199, 210, 254);
 
 }
+
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0); /* Start and end position */
+  }
+  50% {
+    transform: translateY(-10px); /* Midway position, adjust as needed */
+  }
+}
+
+.animated-text {
+  animation: moveUpDown 2s ease-in-out infinite; /* Adjust the duration and timing function as needed */
+}
+
 .box{
     position: relative;
     box-shadow: -2px 4px 13px rgb(0,0,0,0.5);
 }
 .hero{
-    background-image: url("./images/gg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+  background-image: url("./images/gg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.pay{
+  background-image: url("./images/ccc.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 .sign-bg{
   background-image: url("./images/image-from-rawpixel-id-2408262-jpeg.jpg");
